@@ -1,0 +1,1 @@
+web: java -Xmx320m -Xms128m -XX:+UseG1GC -Dserver.port=$PORT -jar target/app.jar
