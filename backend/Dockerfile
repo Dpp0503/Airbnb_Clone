@@ -16,13 +16,13 @@ FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
-# Security: Create non-root user and group
-RUN groupadd -r spring && useradd -r -g spring spring
+# Security: Create non-root user and dedicated writable temp directory for Spring/Tomcat
+RUN mkdir -p /app/tmp && groupadd -r spring && useradd -r -g spring spring
 
 # Copy compiled executable JAR from builder stage
 COPY --from=builder /app/target/app.jar app.jar
 
-# Set file ownership
+# Set file ownership for application and temp directory
 RUN chown -R spring:spring /app
 
 # Switch to non-root user
@@ -31,8 +31,8 @@ USER spring
 # Expose Spring Boot application port
 EXPOSE 8080
 
-# Environment variables for JVM memory limits
-ENV JAVA_OPTS="-Xmx320m -Xms128m -XX:+UseG1GC"
+# Environment variables for JVM memory limits and temp directory
+ENV JAVA_OPTS="-Xmx320m -Xms128m -XX:+UseG1GC -Djava.io.tmpdir=/app/tmp"
 
-# Direct execution entrypoint without shell wrapper
-ENTRYPOINT ["java", "-Xmx320m", "-Xms128m", "-XX:+UseG1GC", "-jar", "app.jar"]
+# Direct execution entrypoint with explicit temp directory setting
+ENTRYPOINT ["java", "-Xmx320m", "-Xms128m", "-XX:+UseG1GC", "-Djava.io.tmpdir=/app/tmp", "-jar", "app.jar"]
