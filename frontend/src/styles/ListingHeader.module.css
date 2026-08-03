@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: var(--spacing-5);
+  padding-bottom: var(--spacing-4);
+  color: var(--color-text-dark);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--color-text-dark);
+  margin: 0;
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20.02px;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  padding: var(--spacing-2);
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: var(--color-background-light);
+}
+
+.actionText {
+  text-decoration: underline;
+}
+
+.toast {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222222;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: bottom 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.toastVisible {
+  bottom: 32px;
+}

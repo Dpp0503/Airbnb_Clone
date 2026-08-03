@@ -1,0 +1,20 @@
+.app-container {
+  width: 100%;
+}
+
+.main-content {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.status-message {
+  padding: var(--spacing-10);
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-dark);
+}
+
+.status-message.error {
+  color: var(--color-primary);
+}

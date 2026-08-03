@@ -1,0 +1,48 @@
+export const getAmenityIcon = (name: string) => {
+  switch (name) {
+    case 'Hairdryer': return <svg viewBox="0 0 32 32"><path d="M10 12h6v8h-6zM4 12h4v8H4zM24 16h4v-4h-4zM2 6h28v4H2zM16 12h8v8h-8z"/></svg>;
+    case 'Cleaning products': return <svg viewBox="0 0 32 32"><path d="M6 12h20v18H6zM12 4h8v8h-8z"/></svg>;
+    case 'Shampoo': return <svg viewBox="0 0 32 32"><path d="M10 10h12v20H10zM14 2h4v8h-4z"/></svg>;
+    case 'Hot water': return <svg viewBox="0 0 32 32"><path d="M4 16h24v12H4zM8 4h2v8H8zM14 4h2v8h-2zM20 4h2v8h-2z"/></svg>;
+    case 'Shower gel': return <svg viewBox="0 0 32 32"><path d="M8 12h16v18H8zM14 2h4v10h-4zM10 6h12v2H10z"/></svg>;
+    case 'Washing machine': return <svg viewBox="0 0 32 32"><path d="M6 4h20v24H6z"/><circle cx="16" cy="18" r="6"/></svg>;
+    case 'Hangers': return <svg viewBox="0 0 32 32"><path d="M16 4l12 16H4zM16 4v8"/></svg>;
+    case 'Bed linen': return <svg viewBox="0 0 32 32"><path d="M4 12h24v16H4zM4 8h24v4H4z"/></svg>;
+    case 'Room-darkening blinds': return <svg viewBox="0 0 32 32"><path d="M4 4h24v24H4zM6 8h20v2H6zM6 14h20v2H6zM6 20h20v2H6z"/></svg>;
+    case 'Iron': return <svg viewBox="0 0 32 32"><path d="M6 16v-4c0-2.21 1.79-4 4-4h8l5 4h1a4 4 0 0 1 4 4v4H6zm14-8v-2h2v2h-2z" /></svg>;
+    case 'Clothes storage': return <svg viewBox="0 0 32 32"><path d="M6 4h20v24H6z M6 12h20 M12 4v24 M20 4v24" /></svg>;
+    case 'Cot': return <svg viewBox="0 0 32 32"><path d="M4 14v6h24v-6 M4 20v4 M28 20v4 M4 14C4 10 10 10 10 10s0 4 6 4 6-4 6-4 6 0 6 4 M8 14v6 M12 14v6 M16 14v6 M20 14v6 M24 14v6" /></svg>;
+    case 'TV': return <svg viewBox="0 0 32 32"><path d="M4 8h24v16H4z M12 4l4 4 4-4" /></svg>;
+    case 'Air conditioning': return <svg viewBox="0 0 32 32"><path d="M4 8h24v8H4z M8 16v4 M16 16v4 M24 16v4 M8 24v2 M16 24v2 M24 24v2" /></svg>;
+    case 'Ceiling fan': return <svg viewBox="0 0 32 32"><path d="M16 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M16 12c-4-4-10-4-10 0s6 4 10 0z M16 16c4 4 10 4 10 0s-6-4-10 0z" /></svg>;
+    case 'Exterior security cameras on property': return <svg viewBox="0 0 32 32"><path d="M4 8h8v4H4z M12 10l6-2v8l-6-2z M18 10a4 4 0 1 1 8 0 4 4 0 0 1-8 0z" /></svg>;
+    case 'Carbon monoxide alarm': return <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" /><circle cx="16" cy="16" r="4" /></svg>;
+    case 'Smoke alarm': return <svg viewBox="0 0 32 32"><path d="M6 16h20v4H6z M10 12h12v4H10z M14 20v4 M18 20v4" /></svg>;
+    case 'Wifi': return <svg viewBox="0 0 32 32"><path d="M16 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M8 14a12 12 0 0 1 16 0 M4 10a18 18 0 0 1 24 0" /></svg>;
+    case 'Dedicated workspace': return <svg viewBox="0 0 32 32"><path d="M4 16h24v4H4z M8 16v-6c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v6 M6 20v6 M26 20v6" /></svg>;
+    case 'Kitchen': return <svg viewBox="0 0 32 32"><path d="M6 24h20v2H6z M8 24V10h16v14z M8 10V6a2 2 0 0 1 4 0v4 M16 10V6a2 2 0 0 1 4 0v4 M24 10V6a2 2 0 0 1 4 0v4 M12 6V4 M20 6V4" /></svg>;
+    case 'Fridge': return <svg viewBox="0 0 32 32"><path d="M8 4h16v24H8z M8 14h16 M12 8v4 M12 18v4" /></svg>;
+    case 'Freezer': return <svg viewBox="0 0 32 32"><path d="M8 4h16v24H8z M8 16h16 M12 8v4 M12 20v4" /></svg>;
+    case 'Microwave': return <svg viewBox="0 0 32 32"><path d="M4 8h24v16H4z M18 8v16 M22 12h2 M22 16h2 M22 20h2" /></svg>;
+    case 'Cooking basics': return <svg viewBox="0 0 32 32"><path d="M6 16a10 10 0 0 0 20 0H6z M4 16h24 M12 6v10 M20 6v10" /></svg>;
+    case 'Crockery and cutlery': return <svg viewBox="0 0 32 32"><path d="M8 4v8c0 2.2 1.8 4 4 4v12 M16 4v12 M24 4v12c0 2.2-1.8 4-4 4v12" /></svg>;
+    case 'Kettle': return <svg viewBox="0 0 32 32"><path d="M8 12h12v12H8z M20 16a4 4 0 0 1 4 4v2 M14 4h4v8 M10 4v4 M18 4v4" /></svg>;
+    case 'Coffee': return <svg viewBox="0 0 32 32"><path d="M8 10h12v10a6 6 0 0 1-12 0V10z M20 12h2a4 4 0 0 1 0 8h-2 M10 4v4 M14 4v4 M18 4v4" /></svg>;
+    case 'Wine glasses': return <svg viewBox="0 0 32 32"><path d="M8 4h16l-4 10a4 4 0 0 1-8 0L8 4z M16 14v10 M12 24h8" /></svg>;
+    case 'Toaster': return <svg viewBox="0 0 32 32"><path d="M6 12h20v12H6z M10 12V8h12v4 M22 16h2" /></svg>;
+    case 'Blender': return <svg viewBox="0 0 32 32"><path d="M10 12h12l-2 10h-8l-2-10z M12 22h8v6h-8z M14 4h4v8 M12 6h8" /></svg>;
+    case 'Cooker': return <svg viewBox="0 0 32 32"><path d="M6 8h20v16H6z M6 14h20 M10 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z M16 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z M22 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" /></svg>;
+    case 'Private entrance': return <svg viewBox="0 0 32 32"><path d="M12 4h8v24h-8z M18 16v2 M6 28h20" /></svg>;
+    case 'Patio or balcony': return <svg viewBox="0 0 32 32"><path d="M4 24h24 M6 24v4 M26 24v4 M8 24V12h16v12 M12 12V6 M20 12V6" /></svg>;
+    case 'Outdoor dining area': return <svg viewBox="0 0 32 32"><path d="M6 24h20 M10 24v-8 M22 24v-8 M8 16h16 M14 16V8 M18 16V8 M6 10l8-6 8 6" /></svg>;
+    case 'Free parking on premises': return <svg viewBox="0 0 32 32"><path d="M8 8h8a4 4 0 0 1 0 8H8V8z M8 24V8" /></svg>;
+    case 'Pool': return <svg viewBox="0 0 32 32"><path d="M4 20c2-2 6-2 8 0s6 2 8 0 6-2 8 0 M4 24c2-2 6-2 8 0s6 2 8 0 6-2 8 0" /></svg>;
+    case 'Hot tub': return <svg viewBox="0 0 32 32"><path d="M4 20h24v4a4 4 0 0 1-8 0v-4 M10 8v6 M16 6v8 M22 8v6" /></svg>;
+    case 'Gym': return <svg viewBox="0 0 32 32"><path d="M6 16h20 M8 12v8 M24 12v8 M4 14v4 M28 14v4" /></svg>;
+    case 'Pets allowed': return <svg viewBox="0 0 32 32"><path d="M10 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M22 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M16 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M16 16c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z" /></svg>;
+    case 'Cleaning available during stay': return <svg viewBox="0 0 32 32"><path d="M12 4h8l-2 20h-4l-2-20z M6 24h20 M16 24v4" /></svg>;
+    case 'Long-term stays allowed': return <svg viewBox="0 0 32 32"><path d="M26 8H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2z M10 6v4 M22 6v4" /></svg>;
+    case 'Self check-in': return <svg viewBox="0 0 32 32"><path d="M16 2v6 M12 4l4-2 4 2 M6 10h20v18H6z M16 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M16 16v6" /></svg>;
+    default: return <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/></svg>;
+  }
+};
