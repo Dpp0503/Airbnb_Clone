@@ -19,8 +19,8 @@ WORKDIR /app
 # Security: Create non-root user and group
 RUN addgroup -S spring && adduser -S spring -G spring
 
-# Copy compiled executable JAR from builder stage
-COPY --from=builder /app/target/*.jar app.jar
+# Copy compiled executable JAR from builder stage (deterministic name)
+COPY --from=builder /app/target/app.jar app.jar
 
 # Set file ownership
 RUN chown -R spring:spring /app
@@ -31,12 +31,8 @@ USER spring
 # Expose Spring Boot application port
 EXPOSE 8080
 
-# Configure JVM flags optimized for container environments
-ENV JAVA_OPTS="-XX:+UseG1GC -XX:MaxRAMPercentage=75.0"
-
-# Healthcheck to verify service availability
-HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://localhost:8080/ || exit 1
+# Configure JVM flags optimized for Render's 512MB free tier memory limit
+ENV JAVA_OPTS="-Xmx256m -Xms128m -XX:+UseG1GC -XX:+ExitOnOutOfMemoryError"
 
 # Launch application
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
