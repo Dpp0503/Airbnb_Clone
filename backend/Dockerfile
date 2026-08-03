@@ -31,8 +31,8 @@ USER spring
 # Expose Spring Boot application port
 EXPOSE 8080
 
-# Strict JVM memory bounds tuned specifically for 512MB RAM free-tier hosting (Render/Railway/Fly)
-ENV JAVA_OPTS="-Xmx192m -Xms96m -XX:MaxMetaspaceSize=128m -XX:ReservedCodeCacheSize=32m -Xss512k -XX:+UseG1GC -XX:+ExitOnOutOfMemoryError"
+# Tuned JVM memory flags for Render 512MB RAM limit (320M max heap allows clean Spring Boot 3 context startup)
+ENV JAVA_OPTS="-Xmx320m -Xms128m -XX:+UseG1GC"
 
-# Launch application with exec to run as PID 1
+# Launch application with exec so java runs as PID 1
 ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar app.jar"]
