@@ -34,5 +34,5 @@ EXPOSE 8080
 # Configure JVM flags optimized for Render's 512MB free tier memory limit
 ENV JAVA_OPTS="-Xmx256m -Xms128m -XX:+UseG1GC -XX:+ExitOnOutOfMemoryError"
 
-# Launch application
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
+# Launch application with exec so java process runs as PID 1
+ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar app.jar"]
